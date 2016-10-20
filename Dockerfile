@@ -26,8 +26,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y vim curl wget build-essential software-properties-common git sudo iptables
 
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install debian-keyring
-# First of all, import the nginx key
-# Then export the key to your local trustedkeys to make it trusted
 
 #----------
 # Fail2Ban
