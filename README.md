@@ -11,6 +11,10 @@ Fail2ban runs in host networking mode and in privileged mode in order to manipul
 Modify docker-compose.yml and set the volumes to some logs you want to monitor. Normally these logs will be volumes mounted in some other containers.
 Add a <service>.conf file in jail.d - set aenabled to true mainly - and optionally a <servicefilter> file in filter.d and mount it as volumes.
 
+Right now fail2ban starts up with some defaults for bantim, maxretries and findtime. If you want to change them, you have to replace jail.conf. See this Blog post: https://www.jimwilbur.com/2016/08/fail2ban_guacamole/
+
+
+
 start the container with
 ```
 docker-compose up
