@@ -12,5 +12,5 @@ services:
       - ./jail.d:/etc/fail2ban/jail.d
       - ./filter.d:/etc/fail2ban/filter.d
       #mount some log volumes here
-      - ./log/guacamole:/var/log/tomcat
+      - ./logs/guacamole:/var/log/tomcat
 
