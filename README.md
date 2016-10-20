@@ -8,8 +8,8 @@ Fail2ban runs in host networking mode and in privileged mode in order to manipul
 
 ## Instructions for Use
 
-Modify docker-compose.yml and set the volumes to some logs you want to monitor. Notrmally these logs will be volumes mounted in some other containers.
-Add a <servce>.conf file in jail.d.
+Modify docker-compose.yml and set the volumes to some logs you want to monitor. Normally these logs will be volumes mounted in some other containers.
+Add a <service>.conf file in jail.d - set aenabled to true mainly - and optionally a <servicefilter> file in filter.d and mount it as volumes.
 
 start the container with
 ```

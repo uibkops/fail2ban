@@ -9,8 +9,9 @@ services:
     privileged: true
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./jail.d:/etc/fail2ban/jail.d
-      - ./filter.d:/etc/fail2ban/filter.d
+      #Examples for jails and filters can be found at fail2ban website or within the container
+      #- ./jail.d/guacamole.conf:/etc/fail2ban/jail.d/guacamole.conf
+      #- ./filter.d/guacamole:/etc/fail2ban/filterd./guacamole
       #mount some log volumes here
       - ./logs/guacamole:/var/log/tomcat
 
