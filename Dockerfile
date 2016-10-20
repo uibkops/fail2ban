@@ -23,7 +23,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
 
 # Install Some PPAs
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y vim curl wget build-essential software-properties-common git sudo
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y vim curl wget build-essential software-properties-common git sudo iptables
 
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install debian-keyring
 # First of all, import the nginx key
