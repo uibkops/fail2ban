@@ -32,19 +32,12 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install debian-keyring
 #----------
 # Fail2Ban
 #----------
-# https://rtcamp.com/tutorials/nginx/fail2ban/
-# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-fail2ban-on-ubuntu-14-04
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y fail2ban
 #get the newest Fail2ban server that allows foreground mode (no daemon)
 # SEE https://github.com/fail2ban/fail2ban/issues/1139
 RUN git clone https://github.com/fail2ban/fail2ban.git
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages python python-pyinotify gamin libgamin-dev python-dnspython python-systemd
 RUN cd fail2ban && python setup.py install
-#add config for rate limiting nginx + any additional config
-#ADD build/fail2ban/nginx-req-limit.conf /etc/fail2ban/filter.d/nginx-req-limit.conf
-#ADD build/fail2ban/nginx.local /etc/fail2ban/jail.d/nginx.local
-#RUN cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-#RUN echo "$(cat /tmp/jail.local)" >> /etc/fail2ban/jail.local
+#add any additional config jails/filters here or mount as volume
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/fail2ban.log
@@ -82,7 +75,7 @@ RUN touch /var/log/auth.log
 # Finish and Cleanup
 #------------------------------
 
-EXPOSE 80 22
+EXPOSE 22
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
