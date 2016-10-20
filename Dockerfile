@@ -1,9 +1,5 @@
 FROM phusion/baseimage:latest
-
-# http://myshell.co.uk/index.php/adjusting-child-processes-for-php-fpm-nginx/
-# http://jeremymarc.github.io/2013/04/22/nginx-and-php-fpm-for-performance/
-# https://serversforhackers.com/compiling-third-party-modules-into-nginx
-# http://xybu.me/setting-up-a-ubuntu-server/
+MAINTAINER Gregor Schwab <gregor.schwab@uibk.ac.at>
 
 # Regenerate SSH host keys and allow ssh.
 RUN rm -f /etc/service/sshd/down
