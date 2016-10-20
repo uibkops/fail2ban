@@ -1,6 +1,6 @@
 # fail2ban
 
-This container installs fail2ban on an Ubunto 16.06.
+This container installs fail2ban on 0.10 an Ubunto 16.04.
 [Phusion Baseimage]: https://github.com/phusion/baseimage-docker is used to handle things with docker correctly.
 Fail2ban is started in foreground mode. (since 0.10)
 
